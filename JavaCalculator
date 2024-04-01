@@ -1,0 +1,33 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Calculadora {
+
+    private Logger logger;
+
+    public Calculadora() {
+    }
+
+    public Double add(Double par1, Double par2) {
+        return par1 + par2;
+    }
+
+    public Double sub(Double par1, Double par2) throws ExceptionCalculadora {
+        if ((par1 - par2) < 0){
+            throw new ExceptionCalculadora("Esta calculadora só utiliza de numeros naturais");
+        }
+        return par1 - par2;
+    }
+
+    public Double mul(Double par1, Double par2) {
+        return par1 * par2;
+    }
+
+    public Double div(Double par1, Double par2) throws ExceptionCalculadora {
+        if (par2 == 0) {
+            throw new ExceptionCalculadora("Nao posso divir por zero");
+        }
+        return par1 / par2;
+    }
+
+}
